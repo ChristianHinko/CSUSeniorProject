@@ -4,26 +4,68 @@
 - ID Number: 1a
 	- Type: Functional
 	- Description: Plugin can successfully compile with a game in Unreal Engine
-	- Rationale: The plugin can not be used if it cannot compile
+	- Rationale: The plugin must compile in order to be used
 	- Fit Criterion: The game can enable this plugin and compile his game
 	- Priority: Essential
 	- Dependencies: N/A
 - ID Number: 1b
 	- Type: Functional
-	- Description: Plugin provides a setup for basic ground locomotion animation
+	- Description: Plugin provides a character animation setup with basic ground locomotion
 	- Rationale: Locomotion is the most foundational feature of character animation
 	- Fit Criterion: The implementing game can use this locomotion setup in his Animation Blueprint
 	- Priority: Essential
 	- Dependencies: 1a
+- ID Number: 1c
+	- Type: Functional
+	- Description: Plugin cooperates with online multiplayer games
+	- Rationale: We do NOT want to stop the game from being multiplayer
+	- Fit Criterion: The game implements our plugin and sees that multiplayer is supported
+	- Priority: Essential
+	- Dependencies: 1a
+- ID Number: 1d
+	- Type: Functional
+	- Description: Animation features are network replicated when necessary
+	- Rationale: Network replication is essential for online multiplayer games and in-game replays
+	- Fit Criterion: The game uses our provided animation features and sees that they are properly replicated
+	- Priority: Essential
+	- Dependencies: 1c
+- ID Number: 1e
+	- Type: Functional
+	- Description: Our character locomotion setup has turn-in-place working
+	- Rationale: Turn-in-place is a basic ground locomotion feature that should be accounted for in our character animation setup
+	- Fit Criterion: The game using us can use our character animation setup with turn-in-place
+	- Priority: High
+	- Dependencies: 1b
+- ID Number: 1f
+	- Type: Functional
+	- Description: Plugin supports animation sharing across several characters
+	- Rationale: Animation sharing is a difficult problem to solve and is often game-specific so we should make an effort to make it as easy as possible
+	- Fit Criterion: The game uses this plugin and can share animations across different characters without this plugin disrupting it
+	- Priority: Medium
+	- Dependencies: 1a
+- ID Number: 1g
+	- Type: Functional
+	- Description: Provide a method for foot placement on ground of varying slope (foot IK)
+	- Rationale: Foot placement slope warping is important for correct ground locomotion
+	- Fit Criterion: The game uses our foot placement solution to keep the character's feet from clipping through objects during a run animation
+	- Priority: Medium
+	- Dependencies: 1a
+- ID Number: 1h
+	- Type: Functional
+	- Description: We provide a method for holding items in the character's hands (hand IK)
+	- Rationale: Holding items is a difficult problem that this plugin will be expected to solve
+	- Fit Criterion: The game uses this to have their character hold weapons in his hands
+	- Priority: Medium
+	- Dependencies: 1a
 
 ## 2. Look and Feel
 - ID Number: 2a
-	- Type: Look and Feel
-	- Description: 
-	- Rationale: 
-	- Fit Criterion: 
-	- Priority: 
-	- Dependencies: N/A
+	- Type: Look and Feel - Appearance
+	- Description: Plugin's default character animation should look appealing
+	- Rationale: It is important to show that this plugin is capable of yielding good results
+	- Fit Criterion: The game uses the plugin's default animations and can see the capabilities
+	- Priority: Low
+	- Dependencies: 1a
 
 ## 3. Usability
 - ID Number: 3a
@@ -33,39 +75,95 @@
 	- Fit Criterion: The implementing game can use the provided animation features without the need to restructure their class hierarchy
 	- Priority: Essential
 	- Dependencies: N/A
+- ID Number: 3b
+	- Type: Usability - Accessibility
+	- Description: Plugin provides animation features that are usable WITHOUT the game needing to use our character animation setup
+	- Rationale: We want to keep things modular so, when possible, keep features outside of our character animation setup
+	- Fit Criterion: The game can choose NOT to use our character animation setup BUT still make use of helpful animation features
+	- Priority: Essential
+	- Dependencies: N/A
+- ID Number: 3c
+	- Type: Usability - Accessibility
+	- Description: Character animation setup works with first-person, third-person, or any camera style
+	- Rationale: This plugin should be able to integrate with any game with any camera setup
+	- Fit Criterion: The game switches between first and third person camera modes and our character animation setup supports it
+	- Priority: Essential
+	- Dependencies: 1a
+- ID Number: 3d
+	- Type: Personalization and Internationalization
+	- Description: Our plugin code is configurable and overridable by the game
+	- Rationale: The game should be able to configure this plugin for its needs and override code for any custom functionality
+	- Fit Criterion: The game uses this plugin and sees that they can tweak and change the base functionality of the plugin (e.g., functions are marked as virtual and properties are exposed for tweaking)
+	- Priority: High
+	- Dependencies: N/A
+- ID Number: 3e
+	- Type: Usability - Ease of Use
+	- Description: Our plugin's design is intuitive and easy to use
+	- Rationale: The plugin should be comprehensive for the game because the plugin's design is a part of the game's design
+	- Fit Criterion: The game using this plugin understands how we fit in with their game design and knows how to integrate us
+	- Priority: High
+	- Dependencies: N/A
 
 ## 4. Performance
 - ID Number: 4a
-	- Type: Performance
-	- Description: 
-	- Rationale: 
-	- Fit Criterion: 
-	- Priority: 
-	- Dependencies: N/A
+	- Type: Performance - Robustness or Fault-Tolerance
+	- Description: Plugin code should avoid runtime errors and/or crashes
+	- Rationale: The game cannot use this plugin in production if there are potential runtime errors
+	- Fit Criterion: The game uses this plugin without it producing any extra possible runtime errors
+	- Priority: Essential
+	- Dependencies: 1a
+- ID Number: 4b
+	- Type: Performance - Safety-Critical
+	- Description: Plugin code should log warnings, errors, and fatal crashes
+	- Rationale: It is important for us to inform the game of any problems or incorrect usage
+	- Fit Criterion: The game uses this plugin and is notified of any potential problems or notified about incorrect usage of any features
+	- Priority: High
+	- Dependencies: 1a
+- ID Number: 4c
+	- Type: Performance - Speed and Latency
+	- Description: Our character animation code should avoid running on the game thread (via staying on the fast-path worker threads)
+	- Rationale: Asynchronous animation code is very achievable and this plugin should not take this possibility away from the game
+	- Fit Criterion: The game uses the plugin's character animation setup without receiving any fast-path warnings
+	- Priority: High
+	- Dependencies: 1a
+- ID Number: 4d
+	- Type: Performance - Capacity
+	- Description: Network replicated features stay lightweight over the network
+	- Rationale: We do NOT want our plugin to bottleneck the game's network bandwidth or replay file storage
+	- Fit Criterion: The game using this plugin can safely use any features with network replication
+	- Priority: High
+	- Dependencies: 1d
 
 ## 5. Maintainability and Support
 - ID Number: 5a
 	- Type: Maintainability and Support
-	- Description: The plugin does NOT step outside the scope of animation
-	- Rationale: This is strictly an animation plugin and should not care about gameplay code (for example)
-	- Fit Criterion: The game can implement this plugin knowning exactly what he is getting from it
+	- Description: This project utilizes source control for development
+	- Rationale: Source control is essential to maintaining code bases, tracking changes, and speedy development workflow
+	- Fit Criterion: The game sees that this plugin is held in source control and sees that it is maintainable by its developers
 	- Priority: Essential
+	- Dependencies: N/A
+- ID Number: 5b
+	- Type: Maintainability and Support
+	- Description: Our plugin does NOT step outside of the scope of animation
+	- Rationale: This is strictly an animation plugin and should not care about gameplay code (for example)
+	- Fit Criterion: The game can implement this plugin knowing exactly what he is getting from it
+	- Priority: Essential
+	- Dependencies: N/A
+- ID Number: 5c
+	- Type: Maintainability and Support
+	- Description: Our features provided are well-documented
+	- Rationale: The plugin features need to be understood by the game in order for them to use them
+	- Fit Criterion: The game wants to use a feature provided by this plugin and understands its usage and behavior
+	- Priority: Medium
 	- Dependencies: N/A
 
 ## 6. Security
 - ID Number: 6a
-	- Type: Security
-	- Description: 
-	- Rationale: 
-	- Fit Criterion: 
-	- Priority: 
-	- Dependencies: N/A
+	- Type: Security - Immunity
+	- Description: This project keeps backups of its content and source code
+	- Rationale: Keeping backups (via source control) makes us immune from losing our work and keeps the game safe from losing this plugin
+	- Fit Criterion: The game sees that backups of the plugin are being kept by the developers and knows that it will remain safe
+	- Priority: Essential
+	- Dependencies: 5a
 
 ## 7. Cultural
-- ID Number: 7a
-	- Type: Cultural
-	- Description: 
-	- Rationale: 
-	- Fit Criterion: 
-	- Priority: 
-	- Dependencies: N/A
