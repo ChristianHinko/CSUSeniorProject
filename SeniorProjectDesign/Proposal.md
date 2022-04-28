@@ -65,23 +65,23 @@ I will begin my research in animation programming for Unreal Engine beginning Su
 
 Expected project deliverables include the character animation plugin itself and a demo game project for both demonstrating and testing purposes.
 
-- Necessary research:
-	- Animation Instance and Animation Blueprint
-	- Control Rig
-	- Linked Anim BP
-	- Animation Layer Interfaces
-	- Jiggle bones, physics, and Anim Dynamics
-	- Full Body IK
-	- Animation warping
-	- Turn in place solutions
-	- Animation sharing across separate Skeletal Meshes
-	- Utilizing IK for animation sharing
-	- Virtual Bones
-	- Pose Driver for using Pose Assets (morph targets) based on bone rotation
-	- Accounting for animation curves for materials and morph targets
-	- Integrating Game Features and Modular Gameplay?
-	- Use Gameplay Tags for driving animation?
-	- Integration with Gameplay Ability System?
+Necessary research:
+- Animation Instance and Animation Blueprint
+- Control Rig
+- Linked Anim BP
+- Animation Layer Interfaces
+- Jiggle bones, physics, and Anim Dynamics
+- Full Body IK
+- Animation warping
+- Turn in place solutions
+- Animation sharing across separate Skeletal Meshes
+- Utilizing IK for animation sharing
+- Virtual Bones
+- Pose Driver for using Pose Assets (morph targets) based on bone rotation
+- Accounting for animation curves for materials and morph targets
+- Integrating Game Features and Modular Gameplay?
+- Use Gameplay Tags for driving animation?
+- Integration with Gameplay Ability System?
 
 
 ## Schedule
