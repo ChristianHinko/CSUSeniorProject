@@ -1,18 +1,19 @@
 # Requirements
 
+
 ## 1. Functional
 - ID Number: 1a
 	- Type: Functional
 	- Description: Plugin can successfully compile with a game in Unreal Engine
 	- Rationale: The plugin must compile in order to be used
-	- Fit Criterion: The game can enable this plugin and compile his game
+	- Fit Criterion: The game can enable this plugin and compile their game
 	- Priority: Essential
 	- Dependencies: N/A
 - ID Number: 1b
 	- Type: Functional
 	- Description: Plugin provides a character animation setup with basic ground locomotion
 	- Rationale: Locomotion is the most foundational feature of character animation
-	- Fit Criterion: The implementing game can use this locomotion setup in his Animation Blueprint
+	- Fit Criterion: The implementing game can use this locomotion setup in their Animation Blueprint
 	- Priority: Essential
 	- Dependencies: 1a
 - ID Number: 1c
@@ -31,11 +32,11 @@
 	- Dependencies: 1c
 - ID Number: 1e
 	- Type: Functional
-	- Description: Our character locomotion setup has turn-in-place working
-	- Rationale: Turn-in-place is a basic ground locomotion feature that should be accounted for in our character animation setup
-	- Fit Criterion: The game using us can use our character animation setup with turn-in-place
-	- Priority: High
-	- Dependencies: 1b
+	- Description: Our camera setup provides a method for determining the active camera for a player out of many cameras
+	- Rationale: The game may have several camera components and we want to provide an easy way to manage these cameras
+	- Fit Criterion: The game using us can have many camera components and easily push them to make them active
+	- Priority: Essential
+	- Dependencies: N/A
 - ID Number: 1f
 	- Type: Functional
 	- Description: Plugin supports animation sharing across several characters
@@ -54,7 +55,7 @@
 	- Type: Functional
 	- Description: We provide a method for holding items in the character's hands (hand IK)
 	- Rationale: Holding items is a difficult problem that this plugin will be expected to solve
-	- Fit Criterion: The game uses this to have their character hold weapons in his hands
+	- Fit Criterion: The game uses this to have their character hold weapons in their hands
 	- Priority: Medium
 	- Dependencies: 1a
 
