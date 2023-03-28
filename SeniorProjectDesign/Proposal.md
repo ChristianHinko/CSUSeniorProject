@@ -1,22 +1,16 @@
 # Proposal
 
-
-
 ## Student Name
 Christian Hinkle
-
 
 ## Degree and Major
 Computer Science (B.S. Degree)
 
-
 ## Project Advisor Name
 Lin, Yu-Ju
 
-
 ## Expected Graduation Date
 May 2023
-
 
 ## Problem Statement
 Game programmers should have the ability to use a generic character animation setup that can be used across multiple games to avoid making duplicate code; however, existing solutions heavily intrude on the programmers' design and lock the game into specific design patterns. Many of these character setup plugins require games to inherit from the plugin's base classes. This takes away the ability for programmers to inherit from their own classes which is a necessary freedom.
@@ -29,7 +23,6 @@ Making use of modular design patterns, this project will provide a character set
 
 Current character systems do not allow flexible game design while this project will provide modular solutions to implementing a character animation setup.
 
-
 ## Project Description
 A modular character animation setup implemented as a plugin for game projects to use in Unreal Engine.
 
@@ -37,18 +30,15 @@ The AnimationSetup plugin will provide common setup for skeletal animation such 
 
 These features will be provided in a compositional design so that the game project is not limited to using solely the plugin's systems. The end product will be a plugin that games can enable and use the given tools as they desire. The game should be able to pick and choose what they want from the plugin.
 
-
 ## Proposed Implementation Language(s)
 Languages
 - C++
 - C#
 - Blueprint Visual Scripting
 
-
 ## Libraries, Packages, Development Kits, etc. to be used in the proposed implementation languages(s)
 Development Kits
 - Unreal Engine
-
 
 ## Additional Software/Equipment Needed
 Development Software
@@ -59,12 +49,10 @@ Development Software
 - Unreal Engine
 - Blender
 
-
 ## Personal Motivation
 Character animation is a very crucial and expressive element in video games. I have several years of experience with Unreal Engine but I have been primarily developing game systems as a foundation for future game development with little experience in real-time animation.
 
 My personal motivation for this project is to build up that experience of real-time animation programming. Animation is an essential ingredient of games and I am excited to provide a modular solution for it!
-
 
 ## Outline of Future Research Efforts
 I will begin my research in animation programming for Unreal Engine beginning Summer 2022. This will undoubtedly tap into a game project implementation as I believe that implementation and experimentation are crucial components of research.
@@ -96,7 +84,6 @@ AnimationSetup
     - Separate meshes for first-person and external view
     - Sharing meshes between first-person and external view
     - Separate animations for first-person and external view
-
 
 ## Schedule
 May 2022
