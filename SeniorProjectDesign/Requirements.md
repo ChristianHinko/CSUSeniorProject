@@ -31,11 +31,11 @@
 	- Dependencies: 1c
 - ID Number: 1e
 	- Type: Functional
-	- Description: Our camera setup provides a method for determining the active camera for a player out of many cameras
-	- Rationale: The game may have several camera components and we want to provide an easy way to manage these cameras
-	- Fit Criterion: The game using us can have many camera components and easily push them to make them active
-	- Priority: Essential
-	- Dependencies: N/A
+	- Description: Our character locomotion setup has turn-in-place working
+	- Rationale: Turn-in-place is a basic ground locomotion feature that should be accounted for in our character animation setup
+	- Fit Criterion: The game using us can use our character animation setup with turn-in-place
+	- Priority: High
+	- Dependencies: 1b
 - ID Number: 1f
 	- Type: Functional
 	- Description: Plugin supports animation sharing across several characters
