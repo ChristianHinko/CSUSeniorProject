@@ -33,8 +33,8 @@ These features will be provided in a compositional design so that the game proje
 ## Proposed Implementation Language(s)
 Languages
 - C++
-- C#
 - Blueprint Visual Scripting
+- C#
 
 ## Libraries, Packages, Development Kits, etc. to be used in the proposed implementation languages(s)
 Development Kits
@@ -42,11 +42,11 @@ Development Kits
 
 ## Additional Software/Equipment Needed
 Development Software
+- Unreal Engine
 - Git
 - Git Bash
 - GitHub
-- Visual Studio 2022
-- Unreal Engine
+- Visual Studio
 - Blender
 
 ## Personal Motivation
