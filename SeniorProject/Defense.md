@@ -9,6 +9,7 @@ Bachelor of Science in Computer Science
 Lin, Yu-Ju
 
 ## Statement of Purpose (with the Problem Statement)
+
 Game programmers should have the ability to use a generic character animation setup that can be used across multiple games to avoid making duplicate code; however, existing solutions heavily intrude on the programmers' design and lock the game into specific design patterns. Many of these character setup plugins require games to inherit from the plugin's base classes. This takes away the ability for programmers to inherit from their own classes which is a necessary freedom.
 
 An example of plugins like these is MoveIt: https://www.unrealengine.com/marketplace/product/moveit-locomotion-system.
@@ -22,6 +23,7 @@ Current character systems do not allow flexible game design while this project w
 ## Research & Background
 
 ## Project Language(s), Software, and Hardware
+
 Programming Languages
 - C++
 - Blueprint Visual Scripting
@@ -39,9 +41,14 @@ Hardware
 - Personal computer
 
 ## Project Requirements
-[Requirements](Requirements.md)
+
+[Requirements](./Requirements.md)
 
 ## Project Implementation Description & Explanation
+
+The Animation Setup plugin provides tools for putting together modular characters and performing common character mesh setup.
+
+The skinless Skeletal Mesh system generates an animated skeleton that serves as the foundation for attaching modular character parts. The attached meshes may copy the animation, e.g., a character's arm moving, while others may perform their own animation, e.g., a character's gun shooting. This separation allows skeletal animation to be independent of Skeletal Meshes.
 
 ## Test Plan
 
