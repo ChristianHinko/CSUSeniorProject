@@ -22,6 +22,18 @@ Current character systems do not allow flexible game design while this project w
 
 ## Research & Background
 
+The research strategy for this project started off very confused and scattered due to my lack of experience in realtime character animation.
+
+Part of the research was figuring out what exactly I needed the plugin to do. I knew that I wanted to make progress on creating video games and that character animation was the next step on the path. I knew that I wanted the functionality separated into a portable plugin for use in several games. I just needed to know what to implement.
+
+I began by reading the entire "Skeletal Mesh Animation System" documentation which is comprised of 131 individual webpages. I did this to make myself aware of all animation features so that I can avoid reinventing already-existing ones and use them to my advantage where possible.
+
+I then researched approaches to animation that other games take. While digging through Epic Games' sample game project, "Lyra", I stumbled upon their "invis" Skeletal Meshes. These are essentially skeletons that can animate independently while attached meshes can copy their poses.
+
+With my newly-learned information, I was a little overwhelmed. Do I make generic animation solutions such as ground locomotion, animation sharing, and turn-in-place? Do I make a first-person mesh and third-person mesh system for different camera views?
+
+The plugin should focus on fundamental character mesh setup instead of making animation-specific features. I concluded this after adding characters to a game and realizing that there was no workflow for assembling modular characters while having animation logic separated from the meshes.
+
 ## Project Language(s), Software, and Hardware
 
 Programming Languages
