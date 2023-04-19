@@ -68,7 +68,16 @@ The skinless Skeletal Mesh system generates an animated skeleton that serves as 
 
 ## Challenges Overcome
 
+Many problems have been solved throughout the course of this project's development.
+
+The SkinlessSkeletalMesh component was a major challenge. After making a static function that generates the skinless skeletal mesh, I needed to figure out where to store the procedurally generated mesh in memory. I don't want every character instance in the game to store their own generated skinless skeletal mesh because that would not scale well at a high player count. I solved this by generating the mesh during UClass load-time and storing it in the class (on the class default object) rather than the instance. This means that skinless skeletal meshes are generated per-class rather than per-instance.
+
+A requirement that I wanted to fulfill in this project was to not require the game to use the plugin's provided base classes. Unreal Engine's primitive scene proxy, having a very restrictive design, made this difficult to achieve. A custom primitive scene proxy must be specific to a primitive component class. This sounds contradictory to my plan. I solved this through compositional design. By having custom primitive scene proxy functionality and configuration in a subobject, any custom scene proxy can implement it. The plugin provides example base classes that are fully functional, but these are not required.
+
+These solutions required planning and new design patterns. I am now better-equipped for building more game systems in the future.
+
 ## Future Enhancements
+
 There are some potential enhancements of this plugin in terms of performance and support for specific workflows.
 
 Although I have designed the skinless skeletal mesh itself to have no extra performance impact on the GPU, the animation that it performs puts a consistent hit on the CPU/GPU. This is due to the fact that I currently require the skeletal mesh component's VisibilityBasedAnimTickOption to be AlwaysTickPoseAndRefreshBones, which means that, whether rendered or not, always perform animation. The reason for this is to allow the skeleton to animate even though nothing is being rendered. A future enhancement for this is to extend the engine's way of determining when to animate the skeletal mesh component; e.g., testing if the bounding box of the skeleton is in view.
