@@ -93,3 +93,5 @@ The plugin's development will continue over the years as I integrate it into my 
 ## Defense Presentation Slides
 
 [Defense Presentation Slides](./DefensePresentationSlides.pdf)
+
+[Character Demo Game Project](https://github.com/ChristianHinko/CSUSeniorProjectCharacterDemo)
