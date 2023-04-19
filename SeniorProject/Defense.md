@@ -87,3 +87,5 @@ Although the features provided combine well in most use cases, the AttachmentAtt
 The plugin's development will continue over the years as I integrate it into my game projects. I am confident that these issues will be addressed by the time that I ship a game.
 
 ## Defense Presentation Slides
+
+[Defense Presentation Slides](./DefensePresentationSlides.pdf)
