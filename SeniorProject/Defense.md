@@ -69,5 +69,12 @@ The skinless Skeletal Mesh system generates an animated skeleton that serves as 
 ## Challenges Overcome
 
 ## Future Enhancements
+There are some potential enhancements of this plugin in terms of performance and support for specific workflows.
+
+Although I have designed the skinless skeletal mesh itself to have no extra performance impact on the GPU, the animation that it performs puts a consistent hit on the CPU/GPU. This is due to the fact that I currently require the skeletal mesh component's VisibilityBasedAnimTickOption to be AlwaysTickPoseAndRefreshBones, which means that, whether rendered or not, always perform animation. The reason for this is to allow the skeleton to animate even though nothing is being rendered. A future enhancement for this is to extend the engine's way of determining when to animate the skeletal mesh component; e.g., testing if the bounding box of the skeleton is in view.
+
+Although the features provided combine well in most use cases, the AttachmentAttacher component can overcomplicate certain workflows. Currently, there is no way to apply portrayals to trees of attached scene components. This means that, the only way to use the AttachmentAttacher component for attachments of separate-portrayed skeletons, you would have to make an individual attachment actor class for each scene component. This is not a scalable workflow. A future enhancement is to design a workflow that addresses this issue. Or possibly redesign the AttachmentAttacher component and/or portrayal system to account for this.
+
+The plugin's development will continue over the years as I integrate it into my game projects. I am confident that these issues will be addressed by the time that I ship a game.
 
 ## Defense Presentation Slides
