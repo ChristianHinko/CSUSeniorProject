@@ -62,6 +62,38 @@ The Animation Setup plugin provides tools for putting together modular character
 
 The skinless Skeletal Mesh system generates an animated skeleton that serves as the foundation for attaching modular character parts. The attached meshes may copy the animation, e.g., a character's arm moving, while others may perform their own animation, e.g., a character's gun shooting. This separation allows skeletal animation to be independent of Skeletal Meshes.
 
+### Skinless Skeletal Mesh
+
+Problem: Unreal Engine requires a skeletal mesh for skeletal animation.
+- Makes a character’s animation dependent on a mesh
+- We want to animate a skeleton on its own
+
+Solution: Generate a skeletal mesh with skeleton data only.
+- Separates responsibilities of skeletal meshes and skeletal animation
+- Character can have zero meshes and still animate
+
+### Attachment Attacher
+
+Problem: There is no workflow for putting together modular characters.
+- Inconsistent character mesh setup
+
+Solution: Make a component for assembling character attachments.
+- Centralizes mesh setup functionality
+	- Easy to maintain
+- Scalable for online multiplayer
+	- E.g., replicating cosmetics
+
+### Portrayals
+
+Problem: You can’t make a character look good for both first and third person.
+- Difficult to animate
+- Limited creativity
+
+Solution: Workflow for portraying actor components uniquely to different views.
+- Multiple actor components for a single representation
+	- Each one associated with a portrayal tag
+- Gives creative freedom to artists
+
 ## Test Plan
 
 [Test Plan Results](./TestPlanResults.md)
