@@ -65,7 +65,7 @@ The skinless Skeletal Mesh system generates an animated skeleton that serves as 
 ### Skinless Skeletal Mesh
 
 Problem: Unreal Engine requires a skeletal mesh for skeletal animation.
-- Makes a character’s animation dependent on a mesh
+- Makes a character's animation dependent on a mesh
 - We want to animate a skeleton on its own
 
 Solution: Generate a skeletal mesh with skeleton data only.
@@ -85,7 +85,7 @@ Solution: Make a component for assembling character attachments.
 
 ### Portrayals
 
-Problem: You can’t make a character look good for both first and third person.
+Problem: You can't make a character look good for both first and third person.
 - Difficult to animate
 - Limited creativity
 
