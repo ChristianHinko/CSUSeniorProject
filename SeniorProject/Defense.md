@@ -58,9 +58,13 @@ Hardware
 
 ## Project Implementation Description & Explanation
 
-The Animation Setup plugin provides tools for putting together modular characters and performing common character mesh setup.
+The Animation Setup plugin provides tools for modular character assembly and common mesh setup.
 
-The skinless Skeletal Mesh system generates an animated skeleton that serves as the foundation for attaching modular character parts. The attached meshes may copy the animation, e.g., a character's arm moving, while others may perform their own animation, e.g., a character's gun shooting. This separation allows skeletal animation to be independent of Skeletal Meshes.
+The skinless Skeletal Mesh system generates an animated skeleton that serves as the foundation for modular attachments. This separation of responsibilities allows skeletal animation to be independent of Skeletal Meshes.
+
+The portrayal system creates a workflow for representing an Actor Component in unique ways for different viewers. Portrayals are implemented via a PortrayalDefinition and are identified by Gameplay Tag. Actors can associate their different components with different portrayal tags.
+
+The NinjaGame project implements a first-person portrayal that the Character views when in first-person; meanwhile, other Actors see the default portrayal.
 
 ### Skinless Skeletal Mesh
 
